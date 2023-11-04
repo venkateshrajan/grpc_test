@@ -1,6 +1,8 @@
-#include <iostream>
+#include "pch.h"
 
 int main (int argc, char *argv[]) {
-  std::cout << "hello from server" << std::endl;
+  google::InitGoogleLogging(argv[0]);
+
+  LOG(INFO) << "Hello from server";
   return 0;
 }

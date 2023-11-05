@@ -1,6 +1,24 @@
 cmake_minimum_required(VERSION 3.22)
 
-include_directories(${grpc_test_SOURCE_DIR})
+#
+# Dependencies
+#
 find_package(glog REQUIRED)
-add_executable(server Main.cpp)
-target_link_libraries(server PRIVATE glog::glog)
+set(DEPENDENCIES
+  glog::glog
+)
+
+#
+# Source files
+#
+set(SOURCES
+  Main.cpp
+)
+
+#
+# Target
+#
+include_directories(${grpc_test_SOURCE_DIR})
+add_executable(server ${SOURCES})
+target_link_libraries(server PRIVATE ${DEPENDENCIES})
+target_precompile_headers(server PRIVATE pch.h)

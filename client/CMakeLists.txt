@@ -21,4 +21,4 @@ set(SOURCES
 include_directories(${grpc_test_SOURCE_DIR})
 add_executable(client ${SOURCES})
 target_link_libraries(client PRIVATE ${DEPENDENCIES})
-target_precompile_headers(client PRIVATE pch.h)
+target_precompile_headers(client PRIVATE ${grpc_test_SOURCE_DIR}/pch.h)

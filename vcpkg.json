@@ -5,6 +5,7 @@
   "dependencies": [
     "glog",
     "grpc",
-    "gtest"
+    "gtest",
+    "protobuf"
   ]
 }

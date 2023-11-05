@@ -22,9 +22,9 @@ set(SOURCES
 # Target
 #
 include_directories(${grpc_test_SOURCE_DIR})
-add_executable(tests ${SORUCES})
+add_executable(tests ${SOURCES})
 target_link_libraries(tests PRIVATE ${DEPENDENCIES})
-target_precompile_headers(tests PRIVATE pch.h)
+target_precompile_headers(tests PRIVATE ${grpc_test_SOURCE_DIR}/pch.h)
 
 #
 # GTest stuffs

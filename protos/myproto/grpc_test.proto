@@ -4,6 +4,10 @@ package grpc_test;
 
 service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
+
+  rpc SayHelloStreaming (HelloRequest) returns (stream HelloReply) {}
+
+  rpc SayHelloBidiStreaming (stream HelloRequest) returns (stream HelloReply) {}
 }
 
 message HelloRequest {

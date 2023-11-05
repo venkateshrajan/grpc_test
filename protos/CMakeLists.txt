@@ -13,7 +13,7 @@ set(PROTO_FILES
 #
 add_library(myproto ${PROTO_FILES})
 target_link_libraries(myproto
-  PUBLIC
+  PRIVATE
   protobuf::libprotobuf
   gRPC::grpc
   gRPC::grpc++

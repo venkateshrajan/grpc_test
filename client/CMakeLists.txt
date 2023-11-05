@@ -3,11 +3,11 @@ cmake_minimum_required(VERSION 3.22)
 #
 # Dependencies
 #
-# find_package(absl CONFIG REQUIRED)
-find_package(glog REQUIRED)
+find_package(absl CONFIG REQUIRED)
+find_package(glog CONFIG REQUIRED)
 set(DEPENDENCIES
-  # absl::base
-  # absl::flags
+  absl::flags
+  absl::flags_parse
   glog::glog
   myproto
 )
@@ -23,7 +23,7 @@ set(SOURCES
 # Includes
 #
 include_directories(${grpc_test_SOURCE_DIR})
-include_directories(${grpc_test_SOURCE_DIR}/build/protos/myproto)
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 #
 # Target

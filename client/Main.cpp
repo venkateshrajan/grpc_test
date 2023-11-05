@@ -1,8 +1,8 @@
 #include "pch.h"
 
-#include "absl/flags/flag.h"
-#include "absl/flags/parse.h"
-#include <absl/flags/internal/flag.h>
+// #include "absl/flags/flag.h"
+// #include "absl/flags/parse.h"
+// #include <absl/flags/internal/flag.h>
 #include <grpcpp/channel.h>
 #include <grpcpp/grpcpp.h>
 #include <grpcpp/create_channel.h>
@@ -11,7 +11,7 @@
 #include <myproto/grpc_test.grpc.pb.h>
 #include <myproto/grpc_test.pb.h>
 
-ABSL_FLAG(std::string, target, "localhost:50051", "Server address");
+// ABSL_FLAG(std::string, target, "localhost:50051", "Server address");
 
 class GreeterClient {
   public:
@@ -38,10 +38,11 @@ class GreeterClient {
 };
 
 int main (int argc, char *argv[]) {
-  absl::ParseCommandLine(argc, argv);
+  // absl::ParseCommandLine(argc, argv);
   google::InitGoogleLogging(argv[0]);
 
-  std::string target_str = absl::GetFlag(FLAGS_target);
+  // std::string target_str = absl::GetFlag(FLAGS_target);
+  std::string target_str = "localhost:3000";
   GreeterClient greeter(grpc::CreateChannel(target_str, grpc::InsecureChannelCredentials()));
   std::cout << "Got reponse from server: " << greeter.SayHello("venky") << std::endl;
 

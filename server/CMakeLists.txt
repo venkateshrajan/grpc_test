@@ -3,13 +3,13 @@ cmake_minimum_required(VERSION 3.22)
 #
 # Dependencies
 #
-find_package(absl CONFIG REQUIRED)
+# find_package(absl CONFIG REQUIRED)
 find_package(glog REQUIRED)
 find_package(gRPC REQUIRED)
 set(DEPENDENCIES
-  absl::base
-  absl::flags
-  absl::strings
+  # absl::base
+  # absl::flags
+  # absl::strings
   glog::glog
   myproto
   gRPC::grpc++_reflection

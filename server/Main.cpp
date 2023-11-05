@@ -1,9 +1,9 @@
 #include "pch.h"
 
-#include "absl/flags/flag.h"
-#include "absl/flags/parse.h"
-#include "absl/strings/str_format.h"
-#include <absl/flags/internal/flag.h>
+// #include "absl/flags/flag.h"
+// #include "absl/flags/parse.h"
+// #include "absl/strings/str_format.h"
+// #include <absl/flags/internal/flag.h>
 #include <grpcpp/grpcpp.h>
 #include <grpcpp/ext/proto_server_reflection_plugin.h>
 #include <grpcpp/health_check_service_interface.h>
@@ -13,7 +13,7 @@
 #include <myproto/grpc_test.grpc.pb.h>
 #include <myproto/grpc_test.pb.h>
 
-ABSL_FLAG(uint16_t, port, 50051, "Server port for the service");
+// ABSL_FLAG(uint16_t, port, 50051, "Server port for the service");
 
 class GreeterService final : public grpc_test::Greeter::Service {
   public:
@@ -27,14 +27,15 @@ class GreeterService final : public grpc_test::Greeter::Service {
 };
 
 int main (int argc, char *argv[]) {
-  absl::ParseCommandLine(argc, argv);
+  // absl::ParseCommandLine(argc, argv);
   google::InitGoogleLogging(argv[0]);
 
   grpc::EnableDefaultHealthCheckService(true);
   grpc::reflection::InitProtoReflectionServerBuilderPlugin();
   
   grpc::ServerBuilder builder;
-  std::string server_address = absl::StrFormat("0.0.0.0:%d", absl::GetFlag(FLAGS_port));
+  // std::string server_address = absl::StrFormat("0.0.0.0:%d", absl::GetFlag(FLAGS_port));
+  std::string server_address = "localhost:3000";
   builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
 
   GreeterService greeter;

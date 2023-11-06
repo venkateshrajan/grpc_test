@@ -20,7 +20,7 @@ GLOG_logtostderr=1 ./build/server/server
 
 ## Run client
 ```
-GLOG_logtostderr=1 ./build/clien/client --name World
+GLOG_logtostderr=1 ./build/client/client --name World
 ```
 
 ## References

@@ -15,12 +15,12 @@ cmake --build build
 
 ## Run server
 ```
-./build/server/server
+GLOG_logtostderr=1 ./build/server/server
 ```
 
 ## Run client
 ```
-./build/clien/client --name World
+GLOG_logtostderr=1 ./build/clien/client --name World
 ```
 
 ## References
